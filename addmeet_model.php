@@ -22,7 +22,7 @@
 	$fileExt= explode(".",$filename);
 	$fileAcExt= strtolower(end($fileExt));
 	$newFilename= time() . "." . $fileAcExt;
-	$fileDes= 'uploadfile/'.$newFilename;
+	$fileDes= 'upload/'.$newFilename;
 
 	move_uploaded_file($filTmpename,$fileDes);
 	$meetfilelocation=$fileDes;
