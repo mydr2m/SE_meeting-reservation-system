@@ -114,7 +114,7 @@
 								<label class="control-label" style="position:relative; top:7px;">ไฟล์เอกสาร:</label>
 							</div>
 							<div class="col-lg-9">
-								<input type="file" class="form-control" name="meetfile">
+								<input type="file" class="form-control" name="meetfile" id="meetfile">
 							</div>
 						</div>
 
