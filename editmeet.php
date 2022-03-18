@@ -14,7 +14,7 @@
 	$addequipment=$_POST['addequipment'];
 	$userid=$_SESSION['userid'];
 	$remark=$_POST['remark'];
-	// $meetfile=$_POST['meetfile'];
+	$meetfile=$_FILES['meetfile'];
 
 	// addfile
 	$file=$_FILES['meetfile'];

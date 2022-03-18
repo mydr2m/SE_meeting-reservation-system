@@ -13,8 +13,8 @@ $addequipment = $_POST['addequipment'];
 $userid = $_SESSION['userid'];
 $remark = $_POST['remark'];
 $meetfile = $_FILES['meetfile'];
-// echo $meetfile;
 
+// echo $meetfile;
 // $target_dir = "upload/";
 // $target_file = $target_dir . basename($_FILES["meetfile"]["name"]);
 // $uploadOK = 1;
