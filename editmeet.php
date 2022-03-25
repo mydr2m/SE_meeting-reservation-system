@@ -28,9 +28,8 @@
 	move_uploaded_file($filTmpename,$fileDes); 
 	$meetfilelocation=$fileDes;
 
-	mysqli_query($conn,"update meeting set title='$title', head='$head', numattend='$numattend', listname='$listname', roomid='$roomid', start='$start', end='$end', addequipment='$addequipment', userid='$userid', remark='$remark', meetfile='$meetfilelocation'  where id='$id'");
+	mysqli_query($conn,"update events set title='$title', head='$head', numattend='$numattend', listname='$listname', roomid='$roomid', start='$start', end='$end', addequipment='$addequipment', userid='$userid', remark='$remark', meetfile='$meetfilelocation'  where id = '$id'");
 	header('location:addmeet.php');
 
-	// echo "update meeting set title='$title', head='$head', numattend='$numattend', listname='$listname', roomid='$roomid', start='$start', end='$end', addequipment='$addequipment', userid='$userid', remark='$remark', meetfile='$meetfile'  where id='$id'";
-
+	// echo "update events set title='$title', head='$head', numattend='$numattend', listname='$listname', roomid='$roomid', start='$start', end='$end', addequipment='$addequipment', userid='$userid', remark='$remark', meetfile='$meetfilelocation'  where id = '$id'";
 ?>

@@ -21,18 +21,15 @@
 	</div>
 
 	<div class="container">
-		<div style="height:20px;"></div>
+		<div style="height:50px;"></div>
 		<div class="well" style="margin:auto; padding:auto; width:100%;">
 			<span style="font-size:25px; color:blue">
 				<center><strong>เพิ่มการประชุม</strong></center>
 			</span>
-			<span class="pull-left">
-				<a href="#addnew" data-toggle="modal" class="btn btn-primary">
-					<span class="glyphicon glyphicon-plus"></span>Add New</a>
-			</span>
-			<div style="height:15px;"></div>
+			<span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
+			<div style="height:50px;"></div>
 			<table class="table table-striped table-bordered table-hover">
-				<thead class="text-center">
+				<thead>
 					<th>รหัสการจอง</th>
 					<th>วาระประชุม</th>
 					<th>ประธานการประชุม</th>
@@ -50,7 +47,7 @@
 					<?php
 					include('conn.php');
 
-					$query = mysqli_query($conn, "SELECT * FROM events");
+					$query = mysqli_query($conn, "select * from events");
 					while ($row = mysqli_fetch_array($query)) {
 					?>
 						<tr>
@@ -73,12 +70,16 @@
 						</tr>
 					<?php
 					}
+
 					?>
 				</tbody>
 			</table>
 		</div>
 		<?php include('addmeet_view.php'); ?>
 	</div>
+
+
+
 
 
 

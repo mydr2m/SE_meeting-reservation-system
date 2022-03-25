@@ -91,37 +91,37 @@ session_start();
   
 <?php  
   
-include("conn.php");  
+  include("conn.php");  
   
-if(isset($_POST['login']))  
-{  
-    $username = $_POST['username'];  
-    $password = $_POST['password'];  
-  
-    $check_user = "select * from user WHERE username='$username' AND password='$password'";  
-  
-    $result = $conn->query($check_user);
-    
-	$row = mysqli_fetch_array($result);
-
+  if(isset($_POST['login']))  
+  {  
+	  $username = $_POST['username'];  
+	  $password = $_POST['password'];  
 	
- if ($result->num_rows > 0)	 
-    {
-        if ($row['type']=="01")
-		{	
-		   $_SESSION['user'] = $username;
-		   $_SESSION['userid'] = $row['user_id'];
-           echo "<script>window.open('adminpage.php','_self')</script>";
-		} else {
-			$_SESSION['user'] = $username;
-			$_SESSION['userid'] = $row['user_id'];
-            echo "<script>window.open('userpage.php','_self')</script>";
-		}
-    }  
-else  
-    {  
-       echo "<script>alert('username or password is incorrect!')</script>";  
-	   echo "<script>window.open('login.php','_self')</script>";  
-    }  
-}  
+	  $check_user = "select * from user WHERE username='$username' AND password='$password'";  
+	
+	  $result = $conn->query($check_user);
+	  
+	  $row = mysqli_fetch_array($result);
+  
+	  
+   if ($result->num_rows > 0)	 
+	  {
+		  if ($row['type']=="01")
+		  {	
+			 $_SESSION['user'] = $username;
+			 $_SESSION['userid'] = $row['user_id'];
+			 echo "<script>window.open('adminpage.php','_self')</script>";
+		  } else {
+			  $_SESSION['user'] = $username;
+			  $_SESSION['userid'] = $row['user_id'];
+			  echo "<script>window.open('userpage.php','_self')</script>";
+		  }
+	  }  
+  else  
+	  {  
+		 echo "<script>alert('username or password is incorrect!')</script>";  
+		 echo "<script>window.open('login.php','_self')</script>";  
+	  }  
+  }
 ?>

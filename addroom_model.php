@@ -12,5 +12,6 @@
 	mysqli_query($conn,"insert into room (roomname, location, capacity, projector, microphone, others ) values ('$roomname', '$location', '$capacity', '$projector', '$microphone', '$others')");
 	header('location:addroom.php');
 
+	// echo "insert into room (roomname, location, capacity, projector, microphone, others ) values ('$roomname', '$location', '$capacity', '$projector', '$microphone', '$others')";
 
 ?>

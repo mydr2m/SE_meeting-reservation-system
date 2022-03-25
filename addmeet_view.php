@@ -1,20 +1,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+
+
 <!-- Add New -->
 <div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<center>
-					<h4 class="modal-title" id="myModalLabel">เพิ่มการประชุม</h4>
-				</center>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<center>
+					<h4 class="modal-title" id="myModalLabel">จองการประชุม</h4>
+				</center>
 			</div>
 			<div class="modal-body">
 				<div class="container-fluid">
 					<form method="POST" action="addmeet_model.php" enctype="multipart/form-data">
-						
 						<div class="row mb-2">
 							<div class="col-lg-3">
 								<label class="control-label" style="position:relative; top:7px;">วาระประชุม:</label>
@@ -138,7 +140,7 @@
 
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">
-								<span class="glyphicon glyphicon-remove"></span> 
+								<span class="glyphicon glyphicon-remove"></span>
 								Cancel
 							</button>
 							<button type="submit" class="btn btn-primary">

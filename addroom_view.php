@@ -2,18 +2,19 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Add New -->
 <div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				
 				<center>
 					<h4 class="modal-title" id="myModalLabel">เพิ่มห้องประชุม</h4>
 				</center>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
-			<form method="POST" action="addroom_model.php">
-				<div class="modal-body">
-					<div class="container-fluid">
-						<div class="row">
+			<div class="modal-body">
+				<div class="container-fluid">
+					<form method="POST" action="addroom_model.php">
+						<div class="row mt-2">
 							<div class="col-lg-2">
 								<label class="control-label" style="position:relative; top:7px;">ชื่อห้อง:</label>
 							</div>
@@ -21,8 +22,8 @@
 								<input type="text" class="form-control" name="roomname">
 							</div>
 						</div>
-						<div style="height:10px;"></div>
-						<div class="row">
+
+						<div class="row mt-2">
 							<div class="col-lg-2">
 								<label class="control-label" style="position:relative; top:7px;">สถานที่:</label>
 							</div>
@@ -30,7 +31,8 @@
 								<input type="text" class="form-control" name="location">
 							</div>
 						</div>
-						<div class="row">
+
+						<div class="row mt-2">
 							<div class="col-lg-2">
 								<label class="control-label" style="position:relative; top:7px;">ความจุห้อง:</label>
 							</div>
@@ -38,7 +40,8 @@
 								<input type="text" class="form-control" name="capacity">
 							</div>
 						</div>
-						<div class="row">
+
+						<div class="row mt-2">
 							<div class="col-lg-2">
 								<label class="control-label" style="position:relative; top:7px;">มีโปรเจคเตอร์:</label>
 							</div>
@@ -46,7 +49,8 @@
 								<input type="text" class="form-control" name="projector">
 							</div>
 						</div>
-						<div class="row">
+
+						<div class="row mt-2">
 							<div class="col-lg-2">
 								<label class="control-label" style="position:relative; top:7px;">มีไมค์:</label>
 							</div>
@@ -54,7 +58,8 @@
 								<input type="text" class="form-control" name="microphone">
 							</div>
 						</div>
-						<div class="row">
+
+						<div class="row mt-2">
 							<div class="col-lg-2">
 								<label class="control-label" style="position:relative; top:7px;">อื่นๆ:</label>
 							</div>
@@ -62,14 +67,14 @@
 								<input type="text" class="form-control" name="others">
 							</div>
 						</div>
-						<div style="height:10px;"></div>
-					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-					<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
-				</div>
-			</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+					</form>
+			</div>
+
 		</div>
 	</div>
 </div>
