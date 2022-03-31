@@ -10,30 +10,48 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>ระบบจองห้องประชุม</title>
+	<style>
+		h1 {
+			font-weight: bolder;
+			text-align: center;
+			margin-bottom: 10px;
+		}
 
+		thead {
+			text-align: center;
+			
+		}
+		td:nth-child(7) {
+			display: flex;
+		}
+
+		td:nth-child(7) a{
+			width: 100%;
+		}
+
+		td:nth-child(7) a:nth-child(1){
+			margin-right: 5px;
+		}
+
+	</style>
   </head>
   <body>
 <?php include("adminmenu.php"); ?>
 
-<div>
-  <img src="img/meeting.png" class="center-block img-fluid" alt="Responsive image">
-</div>
 
-<div class="container">
-	<div style="height:50px;"></div>
-	<div class="well" style="margin:auto; padding:auto; width:80%;">
-	<span style="font-size:25px; color:blue"><center><strong>เพิ่มห้องประชุม</strong></center></span>	
-		<span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
-		<div style="height:50px;"></div>
+<div class="container mt-3">
+	<div class="well" style="margin:auto; padding:auto; width:100%;">
+		<h1>ห้องประชุม</h1>
+		<span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary mb-3"><span class="glyphicon glyphicon-plus"></span>เพิ่มห้องประชุม</a></span>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
 				<th>ชื่อห้องประชุม</th>
 				<th>สถานที่</th>
-				<th>ความจุห้อง</th>
-                <th>มีโปรเจคเตอร์</th>
-				<th>มีไมค์</th>
+				<th style="width: 10%;">ความจุห้อง (คน)</th>
+                <th style="width: 8%;">มีโปรเจคเตอร์</th>
+				<th style="width: 8%;">มีไมค์</th>
                 <th>อื่นๆ</th>
-				<th>Action</th>
+				<th style="width: 15%;">จัดการ</th>
 			</thead>
 			<tbody>
 			<?php
@@ -45,13 +63,13 @@
 					<tr>
 						<td><?php echo $row['roomname']; ?></td>
 						<td><?php echo $row['location']; ?></td>
-						<td><?php echo $row['capacity']; ?></td>
-                        <td><?php echo $row['projector']; ?></td>
-                        <td><?php echo $row['microphone']; ?></td>
+						<td class="text-center"><?php echo $row['capacity']; ?></td>
+                        <td class="text-center"><?php echo $row['projector']; ?></td>
+                        <td class="text-center"><?php echo $row['microphone']; ?></td>
                         <td><?php echo $row['others']; ?></td>
 						<td>
-							<a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> || 
-							<a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+							<a href="#edit<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>แก้ไข</a> 
+							<a href="#del<?php echo $row['roomid']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>ลบ</a>
 							<?php include('roomaction.php'); ?>
 						</td>
 					</tr>

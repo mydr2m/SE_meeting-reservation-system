@@ -11,31 +11,46 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>ระบบจองห้องประชุม</title>
 
+	<style>
+		h1 {
+			font-weight: bolder;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		thead {
+			text-align: center;
+			
+		}
+		td:nth-child(12) {
+			display: block;
+		}
+
+		td:nth-child(12) a{
+			width: 100%;
+		}
+		td:nth-child(12) a:nth-child(1){
+			margin-bottom: 5px;
+		}
+	</style>
+
 </head>
 
 <body>
 	<?php include("adminmenu.php"); ?>
 
-	<div>
-		<img src="img/meeting.png" class="center-block img-fluid" alt="Responsive image">
-	</div>
-
-	<div class="container">
-		<div style="height:50px;"></div>
+	<div class="container mt-3">
 		<div class="well" style="margin:auto; padding:auto; width:100%;">
-			<span style="font-size:25px; color:blue">
-				<center><strong>เพิ่มการประชุม</strong></center>
-			</span>
-			<span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
-			<div style="height:50px;"></div>
+			<h1>การประชุม</h1>
+			<a href="#addnew" data-toggle="modal" class="btn btn-primary mb-3">เพิ่มการประชุม</a>
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
-					<th>รหัสการจอง</th>
+					<th style="width: 3%;">รหัสการจอง</th>
 					<th>วาระประชุม</th>
 					<th>ประธานการประชุม</th>
-					<th>จำนวนผู้เข้าประชุม</th>
+					<th style="width: 5%;">จำนวนผู้เข้าประชุม</th>
 					<th>ผู้เข้าร่วมประชุม</th>
-					<th>ห้องประชุม</th>
+					<th style="width: 5%;">ห้องประชุม</th>
 					<th>วันเวลาเริ่มประชุม</th>
 					<th>วันเวลาสิ้นสุดการประชุม</th>
 					<th>อุปกรณ์เพิ่มเติม</th>
@@ -51,7 +66,7 @@
 					while ($row = mysqli_fetch_array($query)) {
 					?>
 						<tr>
-							<td><?php echo $row['id']; ?></td>
+							<td class="text-center"><?php echo $row['id']; ?></td>
 							<td><?php echo $row['title']; ?></td>
 							<td><?php echo $row['head']; ?></td>
 							<td><?php echo $row['numattend']; ?></td>
@@ -63,8 +78,8 @@
 							<td><?php echo $row['remark']; ?></td>
 							<td><a href="<?php echo $row['meetfile']; ?>">ดูไฟล์</a></td>
 							<td>
-								<a href="#edit<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> ||
-								<a href="#del<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+								<a href="#edit<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>แก้ไข</a>
+								<a href="#del<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>ยกเลิก</a>
 								<?php include('meetaction.php'); ?>
 							</td>
 						</tr>

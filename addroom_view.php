@@ -70,8 +70,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>ยกเลิก</button>
+				<button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-disk"></span>เพิ่มห้องประชุม</a>
 					</form>
 			</div>
 

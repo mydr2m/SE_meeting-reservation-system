@@ -3,10 +3,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <center>
-                    <h4 class="modal-title" id="myModalLabel">Delete</h4>
+                    <h4 class="modal-title" id="myModalLabel">ยกเลิกการประชุม</h4>
                 </center>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <?php
@@ -15,13 +15,13 @@
                 ?>
                 <div class="container-fluid">
                     <h5>
-                        <center>roomname: <strong><?php echo $drow['title']; ?></strong></center>
+                        <center>คุณต้องการที่จะยกเลิกการประชุม <strong><?php echo $drow['title']; ?></strong> หรือไม่ ?</center>
                     </h5>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                <a href="deletemeet.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                <a href="deletemeet.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>ยืนยัน</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>ยกเลิก</button>
             </div>
 
         </div>
@@ -34,10 +34,10 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <center>
-                    <h4 class="modal-title" id="myModalLabel">Edit</h4>
+                    <h4 class="modal-title" id="myModalLabel">แก้ไขการประชุม</h4>
                 </center>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <?php
@@ -152,11 +152,11 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 <span class="glyphicon glyphicon-remove"></span>
-                                Cancel
+                                ยกเลิก
                             </button>
                             <button type="submit" class="btn btn-warning">
                                 <span class="glyphicon glyphicon-check"></span>
-                                Save
+                                ยืนยันการแก้ไข
                             </button>
                         </div>
                     </form>

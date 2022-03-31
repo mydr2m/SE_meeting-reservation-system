@@ -9,10 +9,10 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<center>
-					<h4 class="modal-title" id="myModalLabel">จองการประชุม</h4>
+					<h4 class="modal-title" id="myModalLabel">เพิ่มการประชุม</h4>
 				</center>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
 				<div class="container-fluid">
@@ -141,11 +141,11 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">
 								<span class="glyphicon glyphicon-remove"></span>
-								Cancel
+								ยกเลิก
 							</button>
-							<button type="submit" class="btn btn-primary">
+							<button type="submit" class="btn btn-warning">
 								<span class="glyphicon glyphicon-floppy-disk"></span>
-								Save
+								เพิ่มการประชุม
 							</button>
 						</div>
 					</form>

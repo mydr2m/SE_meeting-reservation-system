@@ -1,57 +1,73 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>ระบบจองห้องประชุม</title>
-    
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-  <!-- Just an image -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>ระบบจองห้องประชุม</title>
 
-  <a class="navbar-brand" href="#">
-    <img src="img/logo.png" width="30" height="30" alt="">
-  </a>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&family=Prompt:wght@400;700&display=swap');
 
-  <a class="navbar-brand" href="index.php">ระบบจองห้องประชุม</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    body {
+			background-image: url('http://wesmilemagazine.com/wp-content/uploads/2019/05/Khonkaen1.jpg');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			width: 100%;
+			height: 100vh;
+			box-sizing: border-box;
+			font-family: 'Prompt';
+		}
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+		.box {
+			display: flex;
+			align-items: center;
+			height: 100vh;
+			width: 100%;
+			margin: auto;
+			background-color:#ebebeb52;
+			padding: 10%;
+		}
 
-    </ul>
-    <div class="ml-md-2 my-lg-0">
-      <a href="login.php" class="btn btn-primary" role="button">เข้าสู่ระบบ</a>
-    </div>
-  </div>
-  </div>
-</nav>
-<div>
-  <img src="img/meeting.png" class="center-block img-fluid" alt="Responsive image">
-</div>
+		.box-1 {
+			display: flex;
+			align-items: center;
+			width: 70%;
+		}
+
+		.box-1 .textbox h1, h3{
+			text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
+		}
+  </style>
+
+</head>
+
+<body>
+  <div class="box">
+		<div class="box-1">
+			<div class="imgbox mr-4">
+				<img src="./img/logo.png">
+			</div>
+			<div class="textbox">
+				<h1>จองห้องประชุม</h1>
+				<h3>เทศบาลนครขอนแก่น</h3>
+				<a href="login.php" class="btn btn-warning" role="button">เข้าสู่ระบบ</a>
+			</div>
+		</div>
+	</div>
 
 
 
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
 </html>

@@ -3,10 +3,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <center>
-                    <h4 class="modal-title" id="myModalLabel">Delete</h4>
+                    <h4 class="modal-title" id="myModalLabel">ลบห้องประชุม</h4>
                 </center>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <?php
@@ -15,13 +15,13 @@
                 ?>
                 <div class="container-fluid">
                     <h5>
-                        <center>roomname: <strong><?php echo $drow['roomname']; ?></strong></center>
+                        <center>คุณต้องการที่จะลบห้องประชุม <strong><?php echo $drow['roomname']; ?></strong> หรือไม่</center>
                     </h5>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                <a href="deleteroom.php?roomid=<?php echo $row['roomid']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                <a href="deleteroom.php?roomid=<?php echo $row['roomid']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>ยืนยัน</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>ยกเลิก</button>
             </div>
 
         </div>
@@ -31,13 +31,13 @@
 
 <!-- Edit -->
 <div class="modal fade" id="edit<?php echo $row['roomid']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <center>
-                    <h4 class="modal-title" id="myModalLabel">Edit</h4>
+                    <h4 class="modal-title" id="myModalLabel">แก้ไขห้องประชุม</h4>
                 </center>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <?php
@@ -46,7 +46,7 @@
                 ?>
                 <div class="container-fluid">
                     <form method="POST" action="editroom.php?roomid=<?php echo $erow['roomid']; ?>">
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-lg-2">
                                 <label style="position:relative; top:7px;">ชื่อห้อง:</label>
                             </div>
@@ -54,8 +54,7 @@
                                 <input type="text" name="roomname" class="form-control" value="<?php echo $erow['roomname']; ?>">
                             </div>
                         </div>
-                        <div style="height:10px;"></div>
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-lg-2">
                                 <label style="position:relative; top:7px;">สถานที่:</label>
                             </div>
@@ -63,7 +62,7 @@
                                 <input type="text" name="location" class="form-control" value="<?php echo $erow['location']; ?>">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-lg-2">
                                 <label style="position:relative; top:7px;">ความจุห้อง:</label>
                             </div>
@@ -71,7 +70,7 @@
                                 <input type="text" name="capacity" class="form-control" value="<?php echo $erow['capacity']; ?>">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-lg-2">
                                 <label style="position:relative; top:7px;">มีโปรเจคเตอร์:</label>
                             </div>
@@ -79,7 +78,7 @@
                                 <input type="text" name="projector" class="form-control" value="<?php echo $erow['projector']; ?>">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-lg-2">
                                 <label style="position:relative; top:7px;">มีไมค์:</label>
                             </div>
@@ -87,7 +86,7 @@
                                 <input type="text" name="microphone" class="form-control" value="<?php echo $erow['microphone']; ?>">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-lg-2">
                                 <label style="position:relative; top:7px;">อื่นๆ:</label>
                             </div>
@@ -96,8 +95,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                            <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-check"></span> Save</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>ยกเลิก</button>
+                            <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-check"></span>ยืนยันการแก้ไข</button>
                         </div>
                     </form>
                 </div>
