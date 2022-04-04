@@ -1,0 +1,156 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+<!-- Add New -->
+<div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<center>
+					<h4 class="modal-title" id="myModalLabel">เพิ่มการประชุม</h4>
+				</center>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<form method="POST" action="addmeet_model-u.php" enctype="multipart/form-data">
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">วาระประชุม:</label>
+							</div>
+							<div class="col-lg-9">
+								<input type="text" class="form-control" name="title">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">ประธานการประชุม:</label>
+							</div>
+							<div class="col-lg-9">
+								<select class="form-control" id="head" name="head">
+									<option value="นายกเทศมนตรี">นายกเทศมนตรี </option>
+									<option value="รองนายกเทศมนตรี1">รองนายกเทศมนตรี1</option>
+									<option value="รองนายกเทศมนตรี2">รองนายกเทศมนตรี2</option>
+									<option value="รองนายกเทศมนตรี3">รองนายกเทศมนตรี3</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">จำนวนผู้เข้าประชุม:</label>
+							</div>
+							<div class="col-lg-9">
+								<input type="text" class="form-control" name="numattend">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">ผู้เข้าร่วมประชุม:</label>
+							</div>
+							<div class="col-lg-9">
+								<input type="text" class="form-control" name="listname">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">ห้องประชุม:</label>
+							</div>
+							<div class="col-lg-9">
+								<select class="form-control" id="roomid" name="roomid">
+									<?php
+									include('conn.php');
+									$query = mysqli_query($conn, "select * from room");
+									while ($row = mysqli_fetch_array($query)) {
+									?>
+										<option value="<?php echo $row['roomid']; ?>"><?php echo $row['roomname']; ?></option>
+									<?php } ?>
+								</select>
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">เริ่มเวลา:</label>
+							</div>
+							<div class="col-lg-9">
+								<input type="datetime-local" class="form-control" name="start">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">สิ้นสุดเวลา:</label>
+							</div>
+							<div class="col-lg-9">
+								<input type="datetime-local" class="form-control" name="end">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">อุปกรณ์เพิ่มเติม:</label>
+							</div>
+							<div class="col-lg-9">
+								<input type="text" class="form-control" name="addequipment">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">หมายเหตุ:</label>
+							</div>
+							<div class="col-lg-9">
+								<input type="text" class="form-control" name="remark">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">ไฟล์เอกสาร:</label>
+							</div>
+							<div class="col-lg-9">
+								<input type="file" class="form-control" name="meetfile" id="meetfile">
+							</div>
+						</div>
+
+						<div class="row mb-2">
+							<div class="col-lg-3">
+								<label class="control-label" style="position:relative; top:7px;">ผู้จองประชุม:</label>
+							</div>
+							<div class="col-lg-9">
+								<?php
+								include('conn.php');
+								$userrequest = $_SESSION['user'];
+								$queryuser = mysqli_query($conn, "select * from user where username='$userrequest'");
+								while ($row = mysqli_fetch_array($queryuser)) {
+								?>
+									<div class="col-lg-10">
+									<?php echo $row['username'];
+								} ?>
+									</div>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								<span class="glyphicon glyphicon-remove"></span>
+								ยกเลิก
+							</button>
+							<button type="submit" class="btn btn-warning">
+								<span class="glyphicon glyphicon-floppy-disk"></span>
+								เพิ่มการประชุม
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

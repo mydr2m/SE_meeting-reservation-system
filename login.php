@@ -128,7 +128,7 @@ if (isset($_POST['login'])) {
 		} else {
 			$_SESSION['user'] = $username;
 			$_SESSION['userid'] = $row['user_id'];
-			echo "<script>window.open('userpage.php','_self')</script>";
+			echo "<script>window.open('calendar-u.php','_self')</script>";
 		}
 	} else {
 		echo "<script>alert('username or password is incorrect!')</script>";

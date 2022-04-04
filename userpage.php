@@ -15,8 +15,7 @@
 </head>
 
 <body>
-  <?php include("adminmenu.php"); ?>
-
+  <?php include("usermenu.php"); ?>
 
 
   <!-- Optional JavaScript -->
